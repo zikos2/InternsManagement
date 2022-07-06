@@ -9,14 +9,14 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Stage {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String nom;
-    private String sujet;
-    private int duree;
-    
-    
+public class EmplacementStage {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	private String nom;
+	private String adresse;
+	private String ville;
+
 }

@@ -1,5 +1,6 @@
 package um5.fmp.stages.gestion_stages.models;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -12,13 +13,14 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Affectation {
+public class AffectationEmplacementStage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String location;
-
+    private Date date_debut;
+    private Date date_fin;
+    
     @ManyToOne
     private Stage stage;
 
@@ -26,9 +28,13 @@ public class Affectation {
     private Etudiant etudiant;
 
     @ManyToOne
-    private Encadrent encadrent;
+    private Encadrant encadrant;
 
     @OneToMany
-    private List<Document> document;
+    private List<Document> documents;
+    
+    @ManyToOne
+    private EmplacementStage emplacementStage;
+
 
 }
