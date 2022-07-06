@@ -14,5 +14,16 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nom;
-
+    
+    
+	public Role(String nom) {
+		super();
+		this.nom = nom;
+	}
+	
+	public Role() {
+	
+	}
+    
+   
 }

@@ -17,8 +17,8 @@ public class Niveau {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nom;
+    private String libelle;
 
     @OneToMany
-    private List<Stage> stages;
+    private Stage stage[]=new Stage[2];
 }
