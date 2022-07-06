@@ -19,6 +19,8 @@ public class Document {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String lien;
+    private String description;
+    private String type;
 
     @ManyToOne
     @JsonIgnoreProperties("{documents}")
