@@ -7,10 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Entity
+@Table(name="Niveau")
 @Data
 public class Niveau {
 
@@ -20,5 +22,6 @@ public class Niveau {
     private String libelle;
 
     @OneToMany
-    private Stage stage[]=new Stage[2];
+    //private Stage stage[]=new Stage[2];
+    private List<Stage> stages;
 }
