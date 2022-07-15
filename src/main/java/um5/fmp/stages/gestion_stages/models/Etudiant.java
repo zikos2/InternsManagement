@@ -6,7 +6,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -14,6 +14,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Entity
+@Table(name="Etudiant")
 @Data
 @EqualsAndHashCode(callSuper=true)
 @DiscriminatorValue(value = "ETUDIANT")
@@ -26,6 +27,6 @@ public class Etudiant extends User {
     @JsonIgnoreProperties("{proprietaire}")
     private List<Document> documents;
 
-    @OneToOne
-    private AffectationEmplacementStage affectationEmplacementStage;
+    @OneToMany
+    private List<AffectationEmplacementStage> affectationEmplacementStages;
 }
