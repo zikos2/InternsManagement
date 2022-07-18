@@ -14,7 +14,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Entity
-@Table(name="Encadrant")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @DiscriminatorValue(value = "ENCADRANT")

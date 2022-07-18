@@ -8,7 +8,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Admin")
 @DiscriminatorValue(value = "ADMIN")
 public class Admin extends User {
 
