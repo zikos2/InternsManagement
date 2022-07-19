@@ -408,6 +408,91 @@ try {
         }
 	}
 
+	@Override
+	public Boolean assignLevelToStudent(long idStudent, long idLevel) {
+		try {
+		Etudiant e = etudiantRepo.findById(idStudent).get();
+		Niveau n = niveauRepo.findById(idLevel).get();
+		e.setNiveau(n);
+		return true;
+		 } catch (Exception ex) {
+	            // TODO: handle exception
+	            System.out.println("Unable to find the student or the level");
+	            System.out.println(ex.getMessage());
+	            return false;
+	        }
+		
+		
+		
+		
+		
+	}
+
+	@Override
+	public Boolean assignLevelToTeacher(long idTeacher, long idLevel) {
+		try {
+			Encadrant e = encadrantRepo.findById(idTeacher).get();
+			Niveau n = niveauRepo.findById(idLevel).get();
+			e.setNiveau(n);
+			return true;
+			 } catch (Exception ex) {
+		            // TODO: handle exception
+		            System.out.println("Unable to find the teacher or the level");
+		            System.out.println(ex.getMessage());
+		            return false;
+		        }
+	}
+
+/*	@Override
+	public Boolean assignLevelToStage(long idStage, long idLevel) {
+		try {
+			Stage e = stageRepo.findById(idStage).get();
+			Niveau n = niveauRepo.findById(idLevel).get();
+			e.set
+			return true;
+			 } catch (Exception ex) {
+		            // TODO: handle exception
+		            System.out.println("Unable to find the student or the level");
+		            System.out.println(ex.getMessage());
+		            return false;
+		        }
+	}*/
+
+	@Override
+	public Boolean removeLevelStudent(long idStudent) {
+		try {
+			Etudiant e = etudiantRepo.findById(idStudent).get();
+			e.setNiveau(null);
+			return true;
+			 } catch (Exception ex) {
+		            // TODO: handle exception
+		            System.out.println("Unable to find the student ");
+		            System.out.println(ex.getMessage());
+		            return false;
+		        }
+	}
+
+	@Override
+	public Boolean removeLevelTeacher(long idTeacher) {
+		try {
+			Encadrant e = encadrantRepo.findById(idTeacher).get();
+			
+			e.setNiveau(null);
+			return true;
+			 } catch (Exception ex) {
+		            // TODO: handle exception
+		            System.out.println("Unable to find the teacher");
+		            System.out.println(ex.getMessage());
+		            return false;
+		        }
+	}
+
+	@Override
+	public Boolean removeLevelStage(long idStage) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 	
