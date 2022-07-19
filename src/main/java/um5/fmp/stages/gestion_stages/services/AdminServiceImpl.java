@@ -414,6 +414,7 @@ try {
 		Etudiant e = etudiantRepo.findById(idStudent).get();
 		Niveau n = niveauRepo.findById(idLevel).get();
 		e.setNiveau(n);
+		etudiantRepo.save(e);
 		return true;
 		 } catch (Exception ex) {
 	            // TODO: handle exception
@@ -434,6 +435,7 @@ try {
 			Encadrant e = encadrantRepo.findById(idTeacher).get();
 			Niveau n = niveauRepo.findById(idLevel).get();
 			e.setNiveau(n);
+			encadrantRepo.save(e);
 			return true;
 			 } catch (Exception ex) {
 		            // TODO: handle exception
@@ -443,12 +445,13 @@ try {
 		        }
 	}
 
-/*	@Override
+	@Override
 	public Boolean assignLevelToStage(long idStage, long idLevel) {
 		try {
 			Stage e = stageRepo.findById(idStage).get();
 			Niveau n = niveauRepo.findById(idLevel).get();
-			e.set
+			n.getStages().add(e);
+			niveauRepo.save(n);
 			return true;
 			 } catch (Exception ex) {
 		            // TODO: handle exception
@@ -456,7 +459,7 @@ try {
 		            System.out.println(ex.getMessage());
 		            return false;
 		        }
-	}*/
+	}
 
 	@Override
 	public Boolean removeLevelStudent(long idStudent) {
@@ -488,10 +491,26 @@ try {
 	}
 
 	@Override
-	public Boolean removeLevelStage(long idStage) {
-		// TODO Auto-generated method stub
-		return null;
+	public Boolean removeLevelStage(long idStage, long idNiveau) {
+		try {
+			Niveau e = niveauRepo.findById(idNiveau).get();
+			for(int i=0;i<e.getStages().size();i++) {
+				if(idStage==e.getStages().get(i).getId())
+                   e.getStages().remove(i);
+				   return true;
+			}
+			return false;
+			
+			
+			 } catch (Exception ex) {
+		            // TODO: handle exception
+		            System.out.println("Unable to find the level or stage");
+		            System.out.println(ex.getMessage());
+		            return false;
+		        }
 	}
+
+	
 
 	
 

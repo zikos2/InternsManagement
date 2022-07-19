@@ -69,13 +69,13 @@ public interface AdminService {
     affectation */
 	public Boolean assignLevelToStudent(long idStudent, long idLevel);
 	public Boolean assignLevelToTeacher(long idTeacher, long idLevel);
-	//public Boolean assignLevelToStage(long idStage, long idLevel);
+	public Boolean assignLevelToStage(long idStage, long idLevel);
 	
 /*------------------------------------------------------------------------------------
  	desaffectation*/
 	public Boolean removeLevelStudent(long idStudent);
 	public Boolean removeLevelTeacher(long idTeacher);
-	
+	public Boolean removeLevelStage(long idStage , long idNiveau);
 	
 
 }
