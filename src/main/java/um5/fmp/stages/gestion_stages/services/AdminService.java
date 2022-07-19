@@ -63,10 +63,19 @@ public interface AdminService {
 	public Boolean deleteAdministrateur(long id);
 	public Boolean deleteStage(long id);
 	public Boolean deleteAnnonce(long id);
-	
 	public Boolean deleteEmplacement(long id);
 	
+/*-----------------------------------------------------------------------------------	
+    affectation */
+	public Boolean assignLevelToStudent(long idStudent, long idLevel);
+	public Boolean assignLevelToTeacher(long idTeacher, long idLevel);
+	public Boolean assignLevelToStage(long idStage, long idLevel);
 	
+/*------------------------------------------------------------------------------------
+ 	desaffectation*/
+	public Boolean removeLevelStudent(long idStudent);
+	public Boolean removeLevelTeacher(long idTeacher);
+	public Boolean removeLevelStage(long idStage , long idNiveau);
 	
 
 }
