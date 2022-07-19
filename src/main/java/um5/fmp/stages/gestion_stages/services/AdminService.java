@@ -75,7 +75,7 @@ public interface AdminService {
  	desaffectation*/
 	public Boolean removeLevelStudent(long idStudent);
 	public Boolean removeLevelTeacher(long idTeacher);
-	public Boolean removeLevelStage(long idStage);
+	
 	
 
 }
