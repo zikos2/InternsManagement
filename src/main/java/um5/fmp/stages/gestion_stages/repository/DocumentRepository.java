@@ -1,7 +1,7 @@
 package um5.fmp.stages.gestion_stages.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-<<<<<<< HEAD
+
 import org.springframework.stereotype.Repository;
 
 import um5.fmp.stages.gestion_stages.models.Document;
@@ -9,5 +9,5 @@ import um5.fmp.stages.gestion_stages.models.Document;
 @Repository
 public interface DocumentRepository extends JpaRepository<Document, Long> {
 
-	
+
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-<<<<<<< HEAD
+
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
@@ -21,7 +21,7 @@ public interface EtudiantRepository extends JpaRepository<Etudiant, Long> {
 	List<Etudiant> getListEtudiantSameNiveau(@Param("id")Long id);
 	
 	//Consulter les infos de l'encadrant
-	@Query(value="select e from Encadrant e where e.niveau.id=:id")
+	@Query(value="select e from Encadrant e where e.niveau.id=:id") 
 	Encadrant getEncadrantOfNiveau(@Param("id")Long id);
 	
 	
@@ -35,10 +35,12 @@ public interface EtudiantRepository extends JpaRepository<Etudiant, Long> {
 	
 
 	/**
+
      * Fetch student of a specifique year
      */
 
     @Query("Select e From Etudiant e Where e.niveau = :niveau")
     List<Etudiant> getStudents(Niveau niveau);
-	
+
  }
+
