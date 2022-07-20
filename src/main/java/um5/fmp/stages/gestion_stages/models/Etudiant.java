@@ -14,10 +14,10 @@ import lombok.EqualsAndHashCode;
 
 @Entity
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @DiscriminatorValue(value = "ETUDIANT")
 public class Etudiant extends User {
-	
+
     @ManyToOne
     private Niveau niveau;
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+<<<<<<< HEAD
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
@@ -32,6 +33,12 @@ public interface EtudiantRepository extends JpaRepository<Etudiant, Long> {
 	@Query(value="select a from AffectationEmplacementStage a where a.etudiant.id=:id")
 	List<AffectationEmplacementStage> getAffectations(@Param("id")Long id);
 	
+
+	/**
+     * Fetch student of a specifique year
+     */
+
+    @Query("Select e From Etudiant e Where e.niveau = :niveau")
+    List<Etudiant> getStudents(Niveau niveau);
 	
-	
-}
+ }
