@@ -12,6 +12,7 @@ import um5.fmp.stages.gestion_stages.models.AffectationEmplacementStage;
 import um5.fmp.stages.gestion_stages.models.Document;
 import um5.fmp.stages.gestion_stages.models.Encadrant;
 import um5.fmp.stages.gestion_stages.models.Etudiant;
+import um5.fmp.stages.gestion_stages.models.Niveau;
 
 @Repository
 public interface EtudiantRepository extends JpaRepository<Etudiant, Long> {

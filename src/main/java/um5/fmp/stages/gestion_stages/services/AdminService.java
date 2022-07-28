@@ -44,6 +44,7 @@ public interface AdminService {
 	public Boolean ajouterStage(Stage s);
 	public Boolean ajouterAnnonce(Annonce a);
 	public Boolean ajouterEmplacement(EmplacementStage e);
+	 public Boolean ajouterNiveau(Niveau s);
 	
 
 /*---------------------------------------------------------------------------------
