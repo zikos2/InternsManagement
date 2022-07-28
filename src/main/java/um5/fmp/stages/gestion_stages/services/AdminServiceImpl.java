@@ -27,13 +27,21 @@ import um5.fmp.stages.gestion_stages.repository.StageRepository;
 public class AdminServiceImpl implements AdminService {
 	@Autowired
 	AdminRepository adminRepo;
+	@Autowired
 	AffectationRepository affectationRepo;
+	@Autowired
 	AnnonceRepository annonceRepo;
+	@Autowired
 	DocumentRepository documentRepo;
+	@Autowired
 	EmplacementStageRepository emplacementStageRepo;
+	@Autowired
 	EncadrantRepository encadrantRepo;
+	@Autowired
 	EtudiantRepository etudiantRepo;
+	@Autowired
 	NiveauRepository niveauRepo;
+	@Autowired
 	StageRepository stageRepo;
 
 	@Override
@@ -208,7 +216,19 @@ public class AdminServiceImpl implements AdminService {
             return false;
         }
 	}
+  
+    public Boolean ajouterNiveau(Niveau s) {
+  		try {
+              niveauRepo.save(s);
+              return true;
 
+          } catch (Exception ex) {
+              // TODO: handle exception
+              System.out.println("Unable to save entity niveau");
+              System.out.println(ex.getMessage());
+              return false;
+          }
+  	}
 	
 	
 
